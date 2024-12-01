@@ -90,7 +90,7 @@ export function Ticker({
       }
       cancelAnimationFrame(animationFrameId);
     };
-  }, [containerRef.current, allowDrag, speed, direction]);
+  }, [allowDrag, speed, direction]);
 
   return (
     <div
