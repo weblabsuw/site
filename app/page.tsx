@@ -9,7 +9,7 @@ export default function HomePage() {
     <Navbar/>
 
     <section className="container max-w-5xl px-8 pt-24 pb-16 leading-relaxed">
-      <h1 className="text-5xl font-extrabold">
+      <h1 className="text-4xl md:text-5xl font-extrabold">
         WebLabs
       </h1>
       
@@ -51,7 +51,7 @@ export default function HomePage() {
 
     <section className="py-12">
       <Ticker
-        speed={0.5}
+        speed={1}
         direction="left"
         allowDrag
       >
@@ -104,7 +104,14 @@ export default function HomePage() {
 
       <hr className="mt-8 border-onSurface/10"/>
 
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="mt-8 flex items-center gap-1.5">
+        <div className="size-2.5 rounded-full bg-green-400 animate-pulse"/>
+        <p className="text-xs">
+          Live from the <Link href="/events" className="underline font-medium">Events page</Link>
+        </p>
+      </div>
+
+      <div className="mt-3 grid grid-cols-1 md:grid-cols-3 gap-6">
         <h3 className="sr-only">Latest events</h3>
 
         <div className="bg-primary/10 rounded-3xl overflow-hidden">
