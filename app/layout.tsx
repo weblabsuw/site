@@ -12,6 +12,11 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+const unbounded = localFont({
+  src: "./fonts/UnboundedVF.ttf",
+  variable: "--font-unbounded",
+  weight: "200 900",
+});
 
 export const metadata: Metadata = {
   title: "WebLabs @ UW",
@@ -26,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-surface text-onSurface`}
+        className={`${geistSans.variable} ${geistMono.variable} ${unbounded.variable} antialiased bg-surface text-onSurface`}
       >
         {children}
       </body>
