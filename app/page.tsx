@@ -55,10 +55,10 @@ export default function HomePage() {
         direction="left"
         allowDrag
       >
-        <div className="w-[20rem] aspect-[4/3] rounded-xl bg-primary/10" children="1"/>
-        <div className="w-[20rem] aspect-[4/3] rounded-xl bg-primary/10" children="2"/>
-        <div className="w-[20rem] aspect-[4/3] rounded-xl bg-primary/10" children="3"/>
-        <div className="w-[20rem] aspect-[4/3] rounded-xl bg-primary/10" children="4"/>
+        <div className="w-[20rem] aspect-[4/3] rounded-xl bg-primary/10"/>
+        <div className="w-[20rem] aspect-[4/3] rounded-xl bg-primary/10"/>
+        <div className="w-[20rem] aspect-[4/3] rounded-xl bg-primary/10"/>
+        <div className="w-[20rem] aspect-[4/3] rounded-xl bg-primary/10"/>
       </Ticker>
     </section>
 

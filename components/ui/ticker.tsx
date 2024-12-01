@@ -45,8 +45,8 @@ export function Ticker({
 
     // scroll variables
     let dx = 0; // scroll delta
-    let scrollSpeed = direction === "left" ? speed : -speed;
-    let frictionFactor = 0.95;
+    const scrollSpeed = direction === "left" ? speed : -speed;
+    const frictionFactor = 0.95;
 
     // animate auto scroll w/ drag + friction
     let animationFrameId: number;
@@ -90,7 +90,7 @@ export function Ticker({
       }
       cancelAnimationFrame(animationFrameId);
     };
-  }, [containerRef.current]);
+  }, [containerRef.current, allowDrag, speed, direction]);
 
   return (
     <div
