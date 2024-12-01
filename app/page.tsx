@@ -69,11 +69,40 @@ export default function HomePage() {
         </p>
       </div>
 
-      <div></div>
+      <div className="mt-4 grid grid-cols-3 gap-8">
+        <div className="px-6 py-4 border-2 border-primary/10 rounded-xl">
+          <h3 className="font-bold underline underline-offset-2">
+            Workshops
+          </h3>
+          <p className="mt-1 text-xs">
+            Hands-on project building sessions, happening every other week.
+          </p>
+        </div>
+
+        <div className="px-6 py-4 border-2 border-primary/10 rounded-xl">
+          <h3 className="font-bold underline underline-offset-2">
+            Social events
+          </h3>
+          <p className="mt-1 text-xs">
+            Games &amp; challenges, share your projects, and hang out with us!
+          </p>
+        </div>
+
+        <div className="px-6 py-4 border-2 border-primary/10 rounded-xl">
+          <h3 className="font-bold underline underline-offset-2">
+            Speaker events
+          </h3>
+          <p className="mt-1 text-xs">
+            Meet pros in the field, opportunities to network.
+          </p>
+        </div>
+      </div>
 
       <hr className="mt-8 border-onSurface/10"/>
 
       <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <h3 className="sr-only">Latest events</h3>
+
         <div className="bg-primary/10 rounded-3xl overflow-hidden">
           <img
             className="hidden md:block w-full aspect-video object-cover object-center bg-primary/10"
