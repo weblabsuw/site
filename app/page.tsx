@@ -8,18 +8,22 @@ export default function HomePage() {
   return (<>
     <Navbar/>
 
-    <section className="container max-w-5xl px-8 py-16 leading-relaxed">
+    <section className="container max-w-5xl px-8 pt-24 pb-16 leading-relaxed">
       <h1 className="text-5xl font-extrabold">
         WebLabs
       </h1>
       
       <p className="mt-6">
-        We are a student org <span className="font-medium text-surface bg-onSurface px-1 rounded-md">@ uw-madison</span> dedicated to building websites together.
+        We are a student org <span className="font-medium text-onPrimary bg-primary px-1 rounded-md">@ UW-Madison</span> dedicated to building websites together.
         We build real projects together and learn from each other along the way. <span className="text-primary/75">(↓ scroll to learn more!)</span>
       </p>
 
       <p className="mt-6">
         Whether you&apos;re a self-described (or aspiring ◡̈) designer, programmer, engineer, founder, or just someone who wants to learn more about the web, we welcome you to join us.
+      </p>
+
+      <p className="mt-6 pl-4 border-l-[3px] border-onSurface/10 font-medium">
+        We&apos;re kicking off in Spring 2025. Stay tuned!
       </p>
 
       <div className="flex flex-col sm:flex-row gap-4 mt-8">
@@ -69,7 +73,7 @@ export default function HomePage() {
         </p>
       </div>
 
-      <div className="mt-4 grid grid-cols-3 gap-8">
+      <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
         <div className="px-6 py-4 border-2 border-primary/10 rounded-xl">
           <h3 className="font-bold underline underline-offset-2">
             Workshops
@@ -112,7 +116,7 @@ export default function HomePage() {
             <h3 className="text-base leading-tight font-bold">
               Personal Website Workshop
             </h3>
-            <div className="mt-1.5 flex gap-2 text-xs font-medium">
+            <div className="mt-1.5 flex gap-2 items-center text-xs font-medium">
               <span className="px-1.5 text-primary border-2 border-primary">Planned</span>
             </div>
             <p className="mt-3 text-xs">
@@ -130,7 +134,7 @@ export default function HomePage() {
             <h3 className="text-base leading-tight font-bold">
               TODO-list Galore Workshop
             </h3>
-            <div className="mt-1.5 flex gap-2 text-xs font-medium">
+            <div className="mt-1.5 flex gap-2 items-center text-xs font-medium">
               <span className="px-1.5 text-primary border-2 border-primary">Planned</span>
             </div>
             <p className="mt-3 text-xs">
@@ -148,7 +152,7 @@ export default function HomePage() {
             <h3 className="text-base leading-tight font-bold">
               Prototyping in Figma
             </h3>
-            <div className="mt-1.5 flex gap-2 text-xs font-medium">
+            <div className="mt-1.5 flex gap-2 items-center text-xs font-medium">
               <span className="px-1.5 text-primary border-2 border-primary">Planned</span>
             </div>
             <p className="mt-3 text-xs">
@@ -159,9 +163,11 @@ export default function HomePage() {
       </div>
 
       <div className="mt-8 flex justify-end">
-        <button className="px-4 py-2 font-bold text-onPrimary bg-primary rounded-lg">
-          View all events →
-        </button>
+        <Link href="/events">
+          <button className="px-4 py-2 font-bold text-onPrimary bg-primary rounded-lg">
+            View all events →
+          </button>
+        </Link>
       </div>
     </section>
 
