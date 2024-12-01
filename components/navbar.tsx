@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 
 export default function Navbar({ active }: { active?: string }) {
   return (
-    <nav className="container max-w-7xl px-8 py-3 flex justify-between items-end gap-4">
+    <nav className="sticky top-0 container max-w-7xl px-8 py-3 flex justify-between items-end gap-4 text-onSurface bg-surface border-b-2 border-primary/10">
       <Link href="/">
         <div>
           <p className="text-2xl leading-none font-bold">
