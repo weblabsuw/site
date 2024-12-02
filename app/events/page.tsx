@@ -6,7 +6,7 @@ export default function EventsPage() {
     <Navbar active="events"/>
 
     <section className="container max-w-6xl px-8 py-16 leading-relaxed">
-      <div className="px-12 py-8 text-onPrimary bg-primary rounded-3xl">
+      <div className="px-8 md:px-12 py-8 text-onPrimary bg-primary rounded-3xl">
         <h1 className="text-4xl font-extrabold">
           Events
         </h1>
