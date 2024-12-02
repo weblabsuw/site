@@ -4,7 +4,7 @@ import { useRef, useEffect } from "react";
 import { cn } from "@/lib/utils"
 
 interface TickerProps {
-  speed?: number;
+  speed?: number; // px per second
   direction?: "left" | "right";
   allowScroll?: boolean;
   allowDrag?: boolean;
@@ -50,9 +50,14 @@ export function Ticker({
 
     // animate auto scroll w/ drag + friction
     let animationFrameId: number;
-    const animateScroll = () => {
-      container.scrollLeft += scrollSpeed + Math.round(dx);
+    let prevTimestamp: number;
+    const animateScroll = (timestamp: number) => {
+      if (!prevTimestamp) prevTimestamp = timestamp;
+      const dt = timestamp - prevTimestamp;
+      container.scrollLeft += scrollSpeed * (dt/1000) + Math.round(dx);
       dx *= frictionFactor;
+
+      prevTimestamp = timestamp;
       animationFrameId = requestAnimationFrame(animateScroll);
     };
     animationFrameId = requestAnimationFrame(animateScroll);

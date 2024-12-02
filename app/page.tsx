@@ -51,7 +51,7 @@ export default function HomePage() {
 
     <section className="py-12">
       <Ticker
-        speed={1}
+        speed={100}
         direction="left"
         allowDrag
       >
