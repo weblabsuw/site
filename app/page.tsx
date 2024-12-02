@@ -8,7 +8,7 @@ export default function HomePage() {
   return (<>
     <Navbar/>
 
-    <section className="container max-w-5xl px-8 pt-24 pb-16 leading-relaxed">
+    <section className="container max-w-5xl px-8 md:pt-24 py-16 leading-relaxed">
       <h1 className="text-4xl md:text-5xl font-extrabold">
         WebLabs
       </h1>
