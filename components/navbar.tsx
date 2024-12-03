@@ -7,8 +7,8 @@ import { HiBars2, HiXMark } from "react-icons/hi2";
 export default function Navbar({ active, className, ...rest }: { active?: string, className?: string, [key: string]: any }) {
   return (
     <>
-      <Desktop active={active} className={cn("hidden sm:flex", className)} {...rest} />
-      <Mobile active={active} className={cn("sm:hidden", className)} {...rest} />
+      <Desktop active={active} className={cn("hidden sm:flex sticky top-0 z-20", className)} {...rest} />
+      <Mobile active={active} className={cn("sm:hidden sticky top-0 z-20", className)} {...rest} />
     </>
   );
 }
@@ -16,7 +16,7 @@ export default function Navbar({ active, className, ...rest }: { active?: string
 function Desktop({ active, className, ...rest }: { active?: string, className?: string, [key: string]: any }) {
   return (
     <nav
-      className={cn("sticky top-0 container max-w-7xl px-8 py-3 flex justify-between items-end gap-4 text-onSurface bg-surface border-b-2 border-primary/10", className)}
+      className={cn("container max-w-7xl px-8 py-3 flex justify-between items-end gap-4 text-onSurface bg-surface border-b-2 border-primary/10", className)}
       {...rest}  
     >
       <Link href="/">
@@ -62,7 +62,7 @@ function Mobile({ active, className, ...rest }: { active?: string, className?: s
 
   return (
     <nav
-      className={cn("sticky top-0 container max-w-7xl px-8 py-3 text-onSurface bg-surface border-b-2 border-primary/10", className)}
+      className={cn("container max-w-7xl px-8 py-3 text-onSurface bg-surface border-b-2 border-primary/10", className)}
       {...rest}
     >
       <div className="flex justify-between items-center gap-4">

@@ -1,5 +1,6 @@
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { HiUser, HiMapPin } from "react-icons/hi2";
 
 export default function EventsPage() {
   return (<>
@@ -26,8 +27,9 @@ export default function EventsPage() {
           </h3>
           <div className="mt-1.5 flex items-center gap-2 text-xs font-medium">
             <span className="px-1.5 text-primary border-2 border-primary">MM/DD</span>
-            <span className="px-1.5 text-onPrimary bg-primary">Design</span>
-            <span className="px-1.5 text-onPrimary bg-primary">Dev</span>
+            <span className="pl-1 pr-1.5 py-0.5 flex items-center gap-0.5 text-onPrimary bg-primary">
+              <HiMapPin size={12}/> TBD
+            </span>
           </div>
           <p className="mt-3 text-xs">
             Building a personal portfolio website to showcase your projects and skills.
@@ -40,7 +42,9 @@ export default function EventsPage() {
           </h3>
           <div className="mt-1.5 flex items-center gap-2 text-xs font-medium">
             <span className="px-1.5 text-primary border-2 border-primary">MM/DD</span>
-            <span className="px-1.5 text-onPrimary bg-primary">Dev</span>
+            <span className="pl-1 pr-1.5 py-0.5 flex items-center gap-0.5 text-onPrimary bg-primary">
+              <HiMapPin size={12}/> Mosse 2650
+            </span>
           </div>
           <p className="mt-3 text-xs">
             Building todo-list apps from scratch with vanilla JavaScript, React, and Svelte.
@@ -53,7 +57,9 @@ export default function EventsPage() {
           </h3>
           <div className="mt-1.5 flex items-center gap-2 text-xs font-medium">
             <span className="px-1.5 text-primary border-2 border-primary">MM/DD</span>
-            <span className="px-1.5 text-onPrimary bg-primary">Design</span>
+              <span className="pl-1 pr-1.5 py-0.5 flex items-center gap-0.5 text-onPrimary bg-primary">
+                <HiMapPin size={12}/> CS 1240
+              </span>
           </div>
           <p className="mt-3 text-xs">
             Creating interactive prototypes for websites and apps using Figma.
@@ -77,8 +83,9 @@ export default function EventsPage() {
             </h3>
             <div className="mt-1.5 flex gap-2 items-center text-xs font-medium">
               <span className="px-1.5 text-primary border-2 border-primary">MM/DD/YYYY</span>
-              <span className="px-1.5 text-onPrimary bg-primary">Design</span>
-              <span className="px-1.5 text-onPrimary bg-primary">Dev</span>
+              <span className="pl-1 pr-1.5 py-0.5 flex items-center gap-0.5 text-onPrimary bg-primary">
+                <HiUser size={12}/> 22
+              </span>
             </div>
             <p className="mt-3 text-xs">
               Building a personal portfolio website to showcase your projects and skills.
@@ -97,7 +104,9 @@ export default function EventsPage() {
             </h3>
             <div className="mt-1.5 flex gap-2 items-center text-xs font-medium">
               <span className="px-1.5 text-primary border-2 border-primary">MM/DD/YYYY</span>
-              <span className="px-1.5 text-onPrimary bg-primary">Dev</span>
+              <span className="pl-1 pr-1.5 py-0.5 flex items-center gap-0.5 text-onPrimary bg-primary">
+                <HiUser size={12}/> 19
+              </span>
             </div>
             <p className="mt-3 text-xs">
               Building todo-list apps from scratch with vanilla JavaScript, React, and Svelte.
@@ -116,7 +125,9 @@ export default function EventsPage() {
             </h3>
             <div className="mt-1.5 flex gap-2 items-center text-xs font-medium">
               <span className="px-1.5 text-primary border-2 border-primary">MM/DD/YYYY</span>
-              <span className="px-1.5 text-onPrimary bg-primary">Design</span>
+              <span className="pl-1 pr-1.5 py-0.5 flex items-center gap-0.5 text-onPrimary bg-primary">
+                <HiUser size={12}/> 15
+              </span>
             </div>
             <p className="mt-3 text-xs">
               Creating interactive prototypes for websites and apps using Figma.
