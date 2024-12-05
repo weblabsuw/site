@@ -1,6 +1,8 @@
 import Link from 'next/link';
+import { FaDiscord, FaInstagram } from "react-icons/fa6";
 
 import { Ticker } from "@/components/ui/ticker";
+import { Button } from "@/components/ui/button";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
@@ -26,12 +28,16 @@ export default function HomePage() {
         We&apos;re kicking off in Spring 2025. Stay tuned!
       </p>
 
-      <div className="flex flex-col sm:flex-row gap-4 mt-8">
-        <button className="px-4 py-2 font-bold text-onPrimary bg-primary rounded-lg">
-          Join Discord
-        </button>
+      <div className="flex flex-col sm:flex-row gap-4 text-sm font-bold mt-8">
+        <Button className="px-4 py-2 flex items-center gap-1.5 text-onPrimary bg-primary rounded-lg">
+          Join our community <FaDiscord size={20}/>
+        </Button>
 
-        <div className="px-4 py-4 sm:py-2 text-primary bg-primary/10 rounded-lg">
+        <Button className="px-4 py-2 flex items-center gap-1.5 text-primary bg-surface border-2 border-primary rounded-lg">
+          Follow us <FaInstagram size={20}/>
+        </Button>
+
+        {/* <div className="px-4 py-4 sm:py-2 text-primary bg-primary/10 rounded-lg">
           <p className="text-base sm:text-sm font-medium">
             Join our mailing list
           </p>
@@ -45,7 +51,7 @@ export default function HomePage() {
               Submit
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
 
@@ -171,9 +177,9 @@ export default function HomePage() {
 
       <div className="mt-8 flex justify-end">
         <Link href="/events">
-          <button className="px-4 py-2 font-bold text-onPrimary bg-primary rounded-lg">
+          <Button className="px-4 py-2 font-bold text-onPrimary bg-primary rounded-lg">
             View all events →
-          </button>
+          </Button>
         </Link>
       </div>
     </section>
