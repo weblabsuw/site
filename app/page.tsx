@@ -10,7 +10,7 @@ export default function HomePage() {
   return (<>
     <Navbar/>
 
-    <section className="container max-w-5xl px-8 md:pt-24 py-16 leading-relaxed">
+    <section className="container max-w-5xl px-8 md:pt-16 py-16 leading-relaxed">
       <h1 className="text-4xl md:text-5xl font-extrabold">
         WebLabs
       </h1>
@@ -21,7 +21,7 @@ export default function HomePage() {
       </p>
 
       <p className="mt-6">
-        Whether you&apos;re a self-described (or aspiring ◡̈) designer, programmer, engineer, founder, or just someone who wants to learn more about the web, we welcome you to join us.
+        Whether you&apos;re a self-described (or aspiring) designer, programmer, engineer, founder, or just someone who wants to learn more about the web, we welcome you to join us.
       </p>
 
       <p className="mt-6 pl-4 border-l-[3px] border-onSurface/10 font-medium">
@@ -57,7 +57,7 @@ export default function HomePage() {
 
     <section className="py-12">
       <Ticker
-        speed={100}
+        speed={60}
         direction="left"
         allowDrag
       >
