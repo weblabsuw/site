@@ -7,7 +7,7 @@ export default function AboutPage() {
     <Navbar active="about"/>
 
     <section className="container max-w-5xl px-8 py-16 leading-relaxed">
-      <h1 className="text-4xl font-extrabold">
+      <h1 className="text-3xl md:text-4xl font-extrabold">
         About WebLabs
       </h1>
 
@@ -15,11 +15,11 @@ export default function AboutPage() {
         We are a registered student org at <span className="font-medium">University of Wisconsin-Madison</span> dedicated to <span className="italic">building websites together</span>.
       </p>
 
-      <h2 className="mt-16 text-2xl font-semibold">
+      <h2 className="mt-16 text-2xl font-bold">
         Supporting tech at UW-Madison
       </h2>
 
-      <h2 className="mt-16 text-2xl font-semibold">
+      <h2 className="mt-16 text-2xl font-bold">
         The officers
       </h2>
       <TeamGrid className="mt-4">
@@ -50,7 +50,7 @@ export default function AboutPage() {
       </TeamGrid>
 
 
-      <h2 className="mt-16 text-2xl font-semibold">
+      <h2 className="mt-16 text-2xl font-bold">
         Join us
       </h2>
       <p className="mt-4">
