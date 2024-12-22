@@ -29,11 +29,11 @@ export default function HomePage() {
       </p>
 
       <div className="flex flex-col sm:flex-row gap-4 text-sm font-bold mt-8">
-        <Button className="px-4 py-2 flex items-center gap-1.5 text-onPrimary bg-primary rounded-lg">
+        <Button className="px-4 py-2 flex items-center justify-center gap-1.5 text-onPrimary bg-primary rounded-lg">
           Join our community <FaDiscord size={20}/>
         </Button>
 
-        <Button className="px-4 py-2 flex items-center gap-1.5 text-primary bg-surface border-2 border-primary rounded-lg">
+        <Button className="px-4 py-2 flex items-center justify-center gap-1.5 text-primary bg-surface border-2 border-primary rounded-lg">
           Follow us <FaInstagram size={20}/>
         </Button>
 
