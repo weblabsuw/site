@@ -22,11 +22,12 @@ export function getEventSlugs() {
     .map((f) => f.replace(/\.mdx$/, ""));
 }
 
-export function getAllEvents() {
-  return getEventSlugs().map((slug) => {
-    const { metadata } = require(`@/content/events/${slug}.mdx`);
+export async function getAllEvents() {
+  const promises = getEventSlugs().map(async (slug) => {
+    const { metadata } = await import(`@/content/events/${slug}.mdx`);
     return { slug, ...metadata } as EventItem;
   });
+  return await Promise.all(promises);
 }
 export async function getEvent(slug: string) {
   const eventModule = await import(`@/content/events/${slug}.mdx`);
