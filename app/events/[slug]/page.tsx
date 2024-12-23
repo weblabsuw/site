@@ -9,7 +9,7 @@ export function generateStaticParams() {
 export const dynamicParams = false;
 
 export default async function Page({ params }: { params: { slug: string } }) {
-  const slug = (await params).slug;
+  const { slug } = params;
   const { Content, metadata } = await getEvent(slug);
 
   return (<EventPage Content={Content} metadata={metadata}/>);
