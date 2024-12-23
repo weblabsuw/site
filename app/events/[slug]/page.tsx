@@ -8,8 +8,8 @@ export function generateStaticParams() {
 
 export const dynamicParams = false;
 
-export default async function Page({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function Page(props: Promise<{ params: { slug: string } }>) {
+  const { slug } = (await props).params;
   const { Content, metadata } = await getEvent(slug);
 
   return (<EventPage Content={Content} metadata={metadata}/>);
