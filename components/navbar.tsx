@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { HiBars2, HiXMark } from "react-icons/hi2";
 
-export default function Navbar({ active, className, ...rest }: { active?: string, className?: string, [key: string]: any }) {
+export function Navbar({ active, className, ...rest }: { active?: string, className?: string, [key: string]: any }) {
   return (
     <>
       <Desktop active={active} className={cn("hidden sm:flex sticky top-0 z-20", className)} {...rest} />

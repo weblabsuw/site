@@ -1,17 +1,9 @@
 import { getAllEvents } from "@/lib/events";
 
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
-import Events from "./Events";
+import { EventsPage } from "@/components/events";
 
-export default function EventsPage() {
+export default function Page() {
   const events = getAllEvents();
 
-  return (<>
-    <Navbar active="events"/>
-
-    <Events events={events}/>
-    
-    <Footer/>
-  </>);
+  return (<EventsPage events={events}/>);
 }

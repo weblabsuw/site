@@ -8,7 +8,7 @@ import {
   PastEventsGridItem,
 } from "@/components/events/events-grid";
 
-export default function Events({ events }: { events: EventItem[] }) {
+export function EventsList({ events }: { events: EventItem[] }) {
   const sortEvents = (a: EventItem, b: EventItem) => { // ascending order
     if (!a.date || !b.date) return 0;
     return new Date(a.date).getTime() - new Date(b.date).getTime();
