@@ -28,7 +28,7 @@ interface UpcomingEventsGridItemProps {
 export function UpcomingEventsGridItem({ slug, title, date, location, description }: UpcomingEventsGridItemProps) {
   return (
     <Link href={`/events/${slug}`} className="group hover:scale-[1.01] transition-transform ease-in-out">
-      <li className="px-6 py-6 rounded-3xl border-2 border-primary">
+      <li className="h-full px-6 py-6 rounded-3xl border-2 border-primary">
         <h3 className="text-base leading-tight font-bold group-hover:underline">
           {title ?? "Untitled Event"}
         </h3>

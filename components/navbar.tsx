@@ -21,7 +21,7 @@ function Desktop({ active, className, ...rest }: { active?: string, className?: 
     >
       <Link href="/">
         <div>
-          <p className="text-2xl leading-none font-bold">
+          <p className="text-2xl leading-none font-black">
             <span className="text-transparent stroke">ww</span>
             <span className="text-primary">weblabs</span>
           </p>
