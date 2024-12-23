@@ -9,17 +9,16 @@ import {
 } from "@/components/events/events-grid";
 
 export default function Events({ events }: { events: EventItem[] }) {
-  const upcomingEvents = events.filter((event) =>
-    !event.date || isNaN(new Date(event.date).getTime()) // events that have no/invalid date
-    || new Date(event.date) >= new Date() // events that haven't happened yet
-  );
+  const sortEvents = (a: EventItem, b: EventItem) => { // ascending order
+    if (!a.date || !b.date) return 0;
+    return new Date(a.date).getTime() - new Date(b.date).getTime();
+  }
 
-  const pastEvents = events.filter((event) =>
-    !!event.date && new Date(event.date) < new Date() // events that have happened
-  );
+  const upcomingEvents = events.filter((event) => !event.archived).sort(sortEvents); // earlier dates first
+  const pastEvents = events.filter((event) => event.archived).sort(sortEvents).reverse(); // later dates first
 
   return (
-    <section className="container max-w-6xl px-8 py-16 leading-relaxed">
+    <section className="container max-w-6xl px-8 pt-12 pb-16 leading-relaxed">
       <div className="px-8 md:px-12 py-8 text-onPrimary bg-primary rounded-3xl">
         <h1 className="text-3xl md:text-4xl font-extrabold">
           Events

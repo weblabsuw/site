@@ -3,10 +3,11 @@ import path from "path";
 
 export interface EventMetadata {
   title?: string;
-  date?: string;
+  date?: string; // ISO 8601 date string
   location?: string;
   description?: string;
-  attendance?: number;
+  attendance?: number; // number of people who attended the event
+  archived?: boolean; // whether or not to show this event in the past events list, defaults to false
 }
 
 export interface EventItem extends EventMetadata {
