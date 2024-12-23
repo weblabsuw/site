@@ -13,7 +13,7 @@ interface TeamGridProps {
 
 export function TeamGrid({ children, className, ...rest }: TeamGridProps) {
   return (
-    <div className={cn("grid grid-cols-3 gap-x-12 gap-y-8", className)} {...rest}>
+    <div className={cn("grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8", className)} {...rest}>
       {children}
     </div>
   );
