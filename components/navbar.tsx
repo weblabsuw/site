@@ -17,22 +17,14 @@ export function Navbar({ active, className, ...rest }: { active?: string, classN
 function Desktop({ active, className, ...rest }: { active?: string, className?: string, [key: string]: any }) {
   return (
     <nav
-      className={cn("container max-w-7xl px-8 py-3 flex justify-between items-end gap-4 text-onSurface bg-surface border-b-2 border-primary/10", className)}
+      className={cn("px-8 py-3 flex justify-between items-end gap-4 text-onSurface bg-surface border-b-2 border-primary/10", className)}
       {...rest}  
     >
       <Link href="/">
-        <div>
-          <p className="text-2xl leading-none font-black">
-            <span className="text-transparent stroke">ww</span>
-            <span className="text-primary">weblabs</span>
-          </p>
-
-          {/* <p className="text-xl leading-none font-bold pl-2.5 pr-4 py-1 border border-onSurface/25 bg-onSurface/5 rounded-full">
-            <span>🔍 </span>
-            <span className="text-transparent stroke">ww</span>
-            <span className="text-primary">weblabs</span>
-          </p> */}
-        </div>
+        <p className="text-2xl leading-none font-black">
+          <span className="text-primary">weblabs</span>
+          <span className="">.club</span>
+        </p>
       </Link>
 
       <div className="flex gap-8 text-sm font-medium">
@@ -65,24 +57,17 @@ function Mobile({ active, className, ...rest }: { active?: string, className?: s
 
   return (
     <nav
-      className={cn("container max-w-7xl px-8 py-3 text-onSurface bg-surface border-b-2 border-primary/10", className)}
+      className={cn("text-onSurface bg-surface border-b-2 border-primary/10", className)}
       {...rest}
     >
-      <div className="flex justify-between items-center gap-4">
-        <Link href="/">
-          <div>
-            <p className="text-2xl leading-none font-bold">
-              <span className="text-transparent stroke">ww</span>
-              <span className="text-primary">weblabs</span>
-            </p>
-
-            {/* <p className="text-xl leading-none font-bold pl-2.5 pr-4 py-1 border border-onSurface/25 bg-onSurface/5 rounded-full">
-              <span>🔍 </span>
-              <span className="text-transparent stroke">ww</span>
-              <span className="text-primary">weblabs</span>
-            </p> */}
-          </div>
-        </Link>
+      <div
+        className="px-4 py-3 flex justify-between items-center gap-4"
+        onClick={() => setOpen(!open)}
+      >
+        <p className="text-2xl leading-none font-black">
+          <span className="text-primary">weblabs</span>
+          <span className="">.club</span>
+        </p>
 
         <div className="flex gap-8">
           <button
@@ -96,7 +81,14 @@ function Mobile({ active, className, ...rest }: { active?: string, className?: s
         </div>
       </div>
       
-      <div className={cn("mt-8 flex-col gap-4 text-xl font-medium", open ? "flex" : "hidden")}>
+      <div className={cn("px-4 py-6 flex-col gap-4 text-xl font-medium bg-primary/10", open ? "flex" : "hidden")}>
+        <Link
+          href="/"
+          className={cn(active === "home" ? "underline decoration-2 underline-offset-4" : "opacity-60 hover:opacity-100 transition-opacity")}
+        >
+          Home
+        </Link>
+
         <Link
           href="/about"
           className={cn(active === "about" ? "underline decoration-2 underline-offset-4" : "opacity-60 hover:opacity-100 transition-opacity")}
