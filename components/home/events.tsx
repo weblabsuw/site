@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 export function Events() {
   return (
     <section className="px-4 py-24 container max-w-5xl">
-      <div className="px-12 py-8 text-onPrimary bg-primary rounded-3xl">
+      <div className="px-8 md:px-12 py-8 text-onPrimary bg-primary rounded-3xl">
         <h2 className="text-3xl font-extrabold">
           Events
         </h2>

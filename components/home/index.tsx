@@ -6,7 +6,7 @@ import { Events } from "./events";
 
 export function HomePage() {
   return (<>
-    <Navbar/>
+    <Navbar active="home"/>
 
     <Hero/>
 

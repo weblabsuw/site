@@ -13,7 +13,7 @@ export function EventsPage({ events }: EventsPageProps) {
     <Navbar active="events"/>
 
     <header className="text-onPrimary bg-primary">
-      <div className="container max-w-6xl px-8 pt-12 pb-12">
+      <div className="container max-w-6xl px-4 pt-12 pb-12">
         <h1 className="text-3xl md:text-4xl font-extrabold">
           Events
         </h1>

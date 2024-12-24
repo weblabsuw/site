@@ -18,7 +18,7 @@ export function EventsList({ events }: { events: EventItem[] }) {
   const pastEvents = events.filter((event) => event.archived).sort(sortEvents).reverse(); // later dates first
 
   return (
-    <section className="container max-w-6xl px-8 pt-12 pb-16 leading-relaxed">
+    <section className="container max-w-6xl px-4 pt-12 pb-16 leading-relaxed">
       <h2 className="text-2xl font-bold">
         Upcoming events
       </h2>

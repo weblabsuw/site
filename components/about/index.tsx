@@ -6,7 +6,7 @@ export function AboutPage() {
   return (<>
     <Navbar active="about"/>
 
-    <section className="container max-w-5xl px-8 py-16 leading-relaxed">
+    <section className="container max-w-5xl px-4 py-16 leading-relaxed">
       <h1 className="text-3xl md:text-4xl font-extrabold">
         About WebLabs
       </h1>

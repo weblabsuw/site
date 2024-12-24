@@ -14,7 +14,7 @@ export function EventPage({ Content, metadata }: EventPageProps) {
   return (<>
     <Navbar active="events"/>
 
-    <article className="container max-w-5xl px-8 pt-8 pb-16">
+    <article className="container max-w-5xl px-4 pt-8 pb-16">
       <Link href="/events" className="opacity-75 hover:opacity-100 text-primary font-medium transition-opacity">
         ← Back to events
       </Link>

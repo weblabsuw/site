@@ -7,7 +7,7 @@ import { MailingListForm } from "@/components/mailing-list-form";
 
 export function Hero() {
   return (
-    <section className="container max-w-6xl px-8 py-16 flex flex-col lg:flex-row lg:items-end gap-24 lg:gap-16 leading-relaxed">
+    <section className="container max-w-6xl px-4 py-16 flex flex-col lg:flex-row lg:items-end gap-24 lg:gap-16 leading-relaxed">
       <div className="flex-1">
         <h1 className="text-4xl md:text-5xl font-extrabold">
           WebLabs
