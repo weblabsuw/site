@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { config } from "@/content/config";
 import { FaDiscord, FaInstagram } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 import { MailingListForm } from "@/components/mailing-list-form";
@@ -25,39 +27,49 @@ export function Hero() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 text-sm font-bold mt-8">
-          <Button className="px-4 py-2 flex items-center justify-center gap-1.5 text-onPrimary bg-primary rounded-lg">
-            Join our community <FaDiscord size={20}/>
-          </Button>
+          {config.socials.discord &&
+            <Link href={config.socials.discord} target="_blank" rel="noopener noreferrer">
+              <Button className="px-4 py-2 flex items-center justify-center gap-1.5 text-onPrimary bg-primary rounded-lg">
+                Join our community <FaDiscord size={20}/>
+              </Button>
+            </Link>
+          }
 
-          <Button className="px-4 py-2 flex items-center justify-center gap-1.5 text-primary bg-surface border-2 border-primary rounded-lg">
-            Follow us <FaInstagram size={20}/>
-          </Button>
+          {config.socials.instagram &&
+            <Link href={config.socials.instagram} target="_blank" rel="noopener noreferrer">
+              <Button className="px-4 py-2 flex items-center justify-center gap-1.5 text-primary bg-surface border-2 border-primary rounded-lg">
+                Follow us <FaInstagram size={20}/>
+              </Button>
+            </Link>
+          }
         </div>
       </div>
 
-      <div className="lg:max-w-[20rem]">
-        <div className="flex items-end gap-4">
-          <Image
-            src="/images/mailbox.png"
-            alt="Mailbox"
-            width={80}
-            height={80}
-          />
+      {config.loopsFormEndpoint && (
+        <div className="lg:max-w-[20rem]">
+          <div className="flex items-end gap-4">
+            <Image
+              src="/images/mailbox.png"
+              alt="Mailbox"
+              width={80}
+              height={80}
+            />
 
-          <div className="py-2">
-            <h2 className="text-lg font-bold italic">
-              Join our mailing list!
-            </h2>
-            <p className="text-xs leading-tight opacity-30">
-              Stay updated on our latest events.
-            </p>
+            <div className="py-2">
+              <h2 className="text-lg font-bold italic">
+                Join our mailing list!
+              </h2>
+              <p className="text-xs leading-tight opacity-30">
+                Stay updated on our latest events.
+              </p>
+            </div>
+          </div>
+          
+          <div className="px-8 py-6 bg-primary/5 rounded-3xl shadow-inner">
+            <MailingListForm/>
           </div>
         </div>
-        
-        <div className="px-8 py-6 bg-primary/5 rounded-3xl shadow-inner">
-          <MailingListForm/>
-        </div>
-      </div>
+      )}
     </section>
   );
 }

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { config } from "@/content/config";
 
 export function Footer() {
   return (
@@ -12,13 +13,17 @@ export function Footer() {
           Events
         </Link>
         
-        <Link href="/" target="_blank" rel="noopener noreferrer" className="opacity-75 hover:opacity-100 text-primary font-medium transition-opacity">
-          Discord ↗
-        </Link>
+        {config.socials.discord &&
+          <Link href={config.socials.discord} target="_blank" rel="noopener noreferrer" className="opacity-75 hover:opacity-100 text-primary font-medium transition-opacity">
+            Discord ↗
+          </Link>
+        }
 
-        <Link href="/" target="_blank" rel="noopener noreferrer" className="opacity-75 hover:opacity-100 text-primary font-medium transition-opacity">
-          Insta ↗
-        </Link>
+        {config.socials.instagram &&
+          <Link href={config.socials.instagram} target="_blank" rel="noopener noreferrer" className="opacity-75 hover:opacity-100 text-primary font-medium transition-opacity">
+            Insta ↗
+          </Link>
+        }
       </div>
 
       <div className="group text-sm sm:text-xs">

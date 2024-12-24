@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import { config } from "@/content/config";
 import { HiBars2, HiXMark } from "react-icons/hi2";
 
 export function Navbar({ active, className, ...rest }: { active?: string, className?: string, [key: string]: any }) {
@@ -48,10 +49,12 @@ function Desktop({ active, className, ...rest }: { active?: string, className?: 
         >
           Events
         </Link>
-
-        <Link href="/" target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">
-          Discord ↗
-        </Link>
+        
+        {config.socials.discord &&
+          <Link href={config.socials.discord} target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">
+            Discord ↗
+          </Link>
+        }
       </div>
     </nav>
   );
@@ -107,10 +110,12 @@ function Mobile({ active, className, ...rest }: { active?: string, className?: s
         >
           Events
         </Link>
-
-        <Link href="/" target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">
-          Discord ↗
-        </Link>
+        
+        {config.socials.discord &&
+          <Link href={config.socials.discord} target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">
+            Discord ↗
+          </Link>
+        }
       </div>
     </nav>
   );
