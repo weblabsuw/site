@@ -36,9 +36,14 @@ export function MailingListForm() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     const formEndpoint = config.loopsFormEndpoint;
-    const mailingListIds = config.loopsListId;
+    const mailingListIds = config.loopsListId ?? "";
     const userGroup = "Website signups";
     const formBody = `firstName=${encodeURIComponent(values.firstName)}&lastName=${encodeURIComponent(values.lastName)}&email=${encodeURIComponent(values.email)}&mailingLists=${encodeURIComponent(mailingListIds)}&userGroup=${encodeURIComponent(userGroup)}`;
+    
+    if (!formEndpoint) {
+      console.error("Loops form endpoint is not set.");
+      return;
+    }
     
     const res = await fetch(formEndpoint, {
       method: "POST",
