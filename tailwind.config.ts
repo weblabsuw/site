@@ -13,7 +13,6 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Unbounded", "sans-serif"],
-        heading: ["Unbounded", "sans-serif"],
         mono: ["Geist Mono", "monospace"],
       },
       colors: {

@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap'); */
-
-body {
-}
-
 .stroke {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #A78875;

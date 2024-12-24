@@ -41,7 +41,7 @@ export function TeamGridItem({ name, role, imageSrc, linkedin, email, website }:
         />
       :
         <div className="size-28 rounded-full flex items-center justify-center bg-surface border-2 border-primary/10 overflow-hidden z-10">
-          <span className="font-black text-primary/10 text-5xl">404</span>
+          <span className="font-black text-primary/10 text-5xl pointer-events-none">404</span>
         </div>
       }
       <div className="-ml-[10%] flex-1 pl-[calc(10%+1rem)] pr-4 py-3 rounded-r-2xl bg-primary/10">
