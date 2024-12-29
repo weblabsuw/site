@@ -23,7 +23,7 @@ export function EventPage({ Content, metadata }: EventPageProps) {
 
       <hr className="my-8 border-[1px] border-onSurface/10"/>
       
-      <div className="prose prose-sm prose-neutral prose-p:my-2 prose-h2:mb-2 prose-code:text-sm prose-code:font-medium">
+      <div className="max-w-none prose prose-sm prose-neutral prose-p:my-2 prose-h2:mb-2 prose-code:text-sm prose-code:font-medium">
         <Content/>
       </div>
     </article>
