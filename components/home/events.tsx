@@ -1,7 +1,21 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { getAllEvents, type EventItem } from "@/lib/events";
 
-export function Events() {
+import { Button } from "@/components/ui/button";
+import {
+  UpcomingEventsGrid,
+  UpcomingEventsGridItem,
+} from "@/components/events/events-grid";
+
+export async function Events() {
+  const events = await getAllEvents();
+
+  const sortEvents = (a: EventItem, b: EventItem) => { // ascending order
+    if (!a.date || !b.date) return 0;
+    return new Date(a.date).getTime() - new Date(b.date).getTime();
+  }
+  const upcomingThreeEvents = events.filter((event) => !event.archived).sort(sortEvents).slice(0,3); // earlier dates first
+
   return (
     <section className="px-4 py-24 container max-w-5xl">
       <div className="px-8 md:px-12 py-8 text-onPrimary bg-primary rounded-3xl">
@@ -52,7 +66,21 @@ export function Events() {
         </p>
       </div>
 
-      <div className="mt-3 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <UpcomingEventsGrid className="mt-4">
+        {upcomingThreeEvents.map((event) => (
+          <UpcomingEventsGridItem
+            key={event.slug}
+            slug={event.slug}
+
+            title={event.title}
+            date={event.date}
+            location={event.location}
+            description={event.description}
+          />
+        ))}
+      </UpcomingEventsGrid>
+
+      {/* <div className="mt-3 grid grid-cols-1 md:grid-cols-3 gap-6">
         <h3 className="sr-only">Latest events</h3>
 
         <div className="bg-primary/10 rounded-3xl overflow-hidden">
@@ -108,7 +136,7 @@ export function Events() {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="mt-8 flex justify-end">
         <Link href="/events">

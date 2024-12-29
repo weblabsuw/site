@@ -10,7 +10,7 @@ export function HomePage() {
 
     <Hero/>
 
-    <Slideshow/>
+    {/* <Slideshow/> */}
 
     <Events/>
 
