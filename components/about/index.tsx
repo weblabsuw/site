@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { TeamGrid, TeamGridItem } from "./team-grid";
@@ -10,14 +12,25 @@ export function AboutPage() {
       <h1 className="text-3xl md:text-4xl font-extrabold">
         About WebLabs
       </h1>
-
       <p className="mt-4">
-        We are a registered student org at <span className="font-medium">University of Wisconsin-Madison</span> dedicated to <span className="italic">building websites together</span>.
+        We are a registered student org at <span className="font-medium">University of Wisconsin-Madison</span> dedicated to building websites together.
       </p>
 
       <h2 className="mt-16 text-2xl font-bold">
         Supporting tech at UW-Madison
       </h2>
+      <p className="mt-4">
+        We're open to all majors and experience levels, and we believe that everyone has something to learn and something to teach.
+        We host a variety of events that help us build a community of motivated students interested in computer science, information science, interaction design, and much more.
+      </p>
+
+      <h2 className="mt-16 text-2xl font-bold">
+        Offering hands-on experiences
+      </h2>
+      <p className="mt-4">
+        Our workshops are designed to be hands-on and interactive.
+        We believe that the best way to learn is by doing, so we focus on building real projects and learning by example.
+      </p>
 
       <h2 className="mt-16 text-2xl font-bold">
         The officers
@@ -54,16 +67,17 @@ export function AboutPage() {
         Join us
       </h2>
       <p className="mt-4">
-        WebLabs is highly community-driven.
-        If you like to get involved, you can totally do so as a community member—run your own workshops, propose your own events, and be a positive presence in our community.
+        We have no dues, no applications, and no requirements. Just show up to <Link href="/events" className="font-medium underline">our events</Link>!
       </p>
       <p className="mt-4">
-        Officers, however, hold roles that are more involved and essential to the operations of the club.
+        Also, WebLabs is highly community-driven.
+        If you like to get involved, you can run your own workshops, propose your own events, and be a positive presence in our community.
+      </p>
+      <p className="mt-4">
+        Officers, however, hold roles that are essential to the operations of the club.
         They commit to being there when they're needed, but other than that, they're no different than community members.
-      </p>
-      <p className="mt-4">
-        This means the best organizers are usually active community members, so if you're interested, we highly encourage you to be active at our events.
-        Keep an eye out for when applications open!
+        If you're interested, we highly encourage you to be active at our events.
+        Applications open soon!
       </p>
     </section>
 
