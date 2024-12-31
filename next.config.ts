@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
   output: "export", // for static site generation
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   trailingSlash: true, // for GitHub Pages compatability
+  basePath: "/site", // for GitHub Pages compatability
 };
 
 const withMDX = createMDX({
