@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 import { HiMiniLink, HiEnvelope } from "react-icons/hi2";
@@ -32,10 +31,8 @@ export function TeamGridItem({ name, role, imageSrc, linkedin, email, website }:
   return (
     <div className="flex items-center">
       {imageSrc ?
-        <Image
+        <img
           src={imageSrc}
-          width={512}
-          height={512}
           alt={name}
           className="size-28 object-center object-cover rounded-full bg-primary select-none z-10"
         />

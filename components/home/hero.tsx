@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { config } from "@/content/config";
 import { FaDiscord, FaInstagram } from "react-icons/fa6";
@@ -48,11 +47,10 @@ export function Hero() {
       {config.loopsFormEndpoint && (
         <div className="lg:max-w-[20rem]">
           <div className="flex items-end gap-4">
-            <Image
+            <img
               src="/images/mailbox.png"
               alt="Mailbox"
-              width={80}
-              height={80}
+              className="w-20 h-20 pointer-events-none select-none"
             />
 
             <div className="py-2">
