@@ -8,10 +8,6 @@ export function Footer() {
         <Link href="/about" className="opacity-75 hover:opacity-100 text-primary font-medium transition-opacity">
           About
         </Link>
-
-        <Link href="/events" className="opacity-75 hover:opacity-100 text-primary font-medium transition-opacity">
-          Events
-        </Link>
         
         {config.socials.discord &&
           <Link href={config.socials.discord} target="_blank" rel="noopener noreferrer" className="opacity-75 hover:opacity-100 text-primary font-medium transition-opacity">

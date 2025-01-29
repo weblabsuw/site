@@ -34,13 +34,6 @@ function Desktop({ active, className, ...rest }: { active?: string, className?: 
         >
           About
         </Link>
-
-        <Link
-          href="/events"
-          className={cn(active === "events" ? "border-b-2 border-onSurface" : "opacity-60 hover:opacity-100 transition-opacity")}
-        >
-          Events
-        </Link>
         
         {config.socials.discord &&
           <Link href={config.socials.discord} target="_blank" rel="noopener noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">
@@ -94,13 +87,6 @@ function Mobile({ active, className, ...rest }: { active?: string, className?: s
           className={cn(active === "about" ? "underline decoration-2 underline-offset-4" : "opacity-60 hover:opacity-100 transition-opacity")}
         >
           About
-        </Link>
-
-        <Link
-          href="/events"
-          className={cn(active === "events" ? "underline decoration-2 underline-offset-4" : "opacity-60 hover:opacity-100 transition-opacity")}
-        >
-          Events
         </Link>
         
         {config.socials.discord &&

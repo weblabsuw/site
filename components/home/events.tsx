@@ -1,26 +1,13 @@
 import Link from "next/link";
-import { getAllEvents, type EventItem } from "@/lib/events";
 
 import { Button } from "@/components/ui/button";
-import {
-  UpcomingEventsGrid,
-  UpcomingEventsGridItem,
-} from "@/components/events/events-grid";
 
 export async function Events() {
-  const events = await getAllEvents();
-
-  const sortEvents = (a: EventItem, b: EventItem) => { // ascending order
-    if (!a.date || !b.date) return 0;
-    return new Date(a.date).getTime() - new Date(b.date).getTime();
-  }
-  const upcomingThreeEvents = events.filter((event) => !event.archived).sort(sortEvents).slice(0,3); // earlier dates first
-
   return (
     <section className="px-4 py-24 container max-w-5xl">
       <div className="px-8 md:px-12 py-8 text-onPrimary bg-primary rounded-3xl">
         <h2 className="text-3xl font-extrabold">
-          Events
+          What we do
         </h2>
 
         <p className="">
@@ -40,45 +27,22 @@ export async function Events() {
 
         <div className="px-6 py-4 border-2 border-primary/10 rounded-xl">
           <h3 className="font-bold underline underline-offset-2">
-            Social events
+            Industry projects
           </h3>
           <p className="mt-1 text-xs">
-            Games &amp; challenges, share your projects, and hang out with us!
+            Work in teams for real-world clients or on creative ideas.
           </p>
         </div>
 
         <div className="px-6 py-4 border-2 border-primary/10 rounded-xl">
           <h3 className="font-bold underline underline-offset-2">
-            Speaker events
+            Community
           </h3>
           <p className="mt-1 text-xs">
-            Meet pros in the field, opportunities to network.
+            We're designers, coders, engineers, founders, learners, and makers.
           </p>
         </div>
       </div>
-
-      <hr className="mt-8 border-onSurface/10"/>
-
-      <div className="mt-8 flex items-center gap-1.5">
-        <div className="size-2.5 rounded-full bg-green-400 animate-pulse"/>
-        <p className="text-xs">
-          Live from the <Link href="/events" className="underline font-medium">Events page</Link>
-        </p>
-      </div>
-
-      <UpcomingEventsGrid className="mt-4">
-        {upcomingThreeEvents.map((event) => (
-          <UpcomingEventsGridItem
-            key={event.slug}
-            slug={event.slug}
-
-            title={event.title}
-            date={event.date}
-            location={event.location}
-            description={event.description}
-          />
-        ))}
-      </UpcomingEventsGrid>
 
       {/* <div className="mt-3 grid grid-cols-1 md:grid-cols-3 gap-6">
         <h3 className="sr-only">Latest events</h3>
@@ -139,9 +103,9 @@ export async function Events() {
       </div> */}
 
       <div className="mt-8 flex justify-end">
-        <Link href="/events">
+        <Link href="/about">
           <Button className="px-4 py-2 font-bold text-onPrimary bg-primary rounded-lg">
-            View all events →
+            Learn more →
           </Button>
         </Link>
       </div>
