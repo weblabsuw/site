@@ -23,7 +23,7 @@ export function Footer() {
       </div>
 
       <div className="group text-sm sm:text-xs">
-        Built with ❤️ and <span className="group-hover:hidden">🧀</span><span className="hidden group-hover:inline">🍺</span> by WebLabs
+         Made with ❤️ and <span className="group-hover:hidden">🧀</span><span className="hidden group-hover:inline">🍺</span> by WebLabs
       </div>
     </footer>
   );

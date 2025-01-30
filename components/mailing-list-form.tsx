@@ -118,7 +118,7 @@ export function MailingListForm() {
             type="submit"
             className="px-3 py-1.5 text-sm font-bold text-onPrimary bg-primary rounded-lg"
           >
-            Add me!
+            Subscribe
           </Button>
         </div>
       </form>
