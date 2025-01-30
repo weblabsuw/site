@@ -53,14 +53,14 @@ export function AboutPage() {
         <TeamGridItem
           name="Valerie Lee"
           role="VP of Communications"
-          imageSrc={undefined}
+          imageSrc="/images/team/valerie.jpg"
           linkedin="https://www.linkedin.com/in/valerie-lee-62ba74301"
           email="mailto:velee@wisc.edu"
         />
         <TeamGridItem
           name="Jackson Daniel"
           role="VP of Logistics"
-          imageSrc={undefined}
+          imageSrc="/images/team/jackson.jpg"
           linkedin="https://www.linkedin.com/in/jackson-daniel"
         />
       </TeamGrid>
