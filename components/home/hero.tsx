@@ -22,7 +22,7 @@ export function Hero() {
         </p>
 
         <p className="mt-6 pl-4 border-l-[3px] border-onSurface/10 font-medium">
-          We&apos;re kicking off in Spring 2025. Stay tuned!
+          Events happening every other week. Join the Discord to stay updated!
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 text-sm font-bold mt-8">
