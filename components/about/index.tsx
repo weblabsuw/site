@@ -70,7 +70,7 @@ export function AboutPage() {
         Join us
       </h2>
       <p className="mt-4">
-        We have no dues, no applications, and no requirements. Just show up to <Link href="/events" className="font-medium underline">our events</Link>!
+        We have no dues, no applications, and no requirements. Just show up to our events!
       </p>
       <p className="mt-4">
         Also, WebLabs is highly community-driven.
