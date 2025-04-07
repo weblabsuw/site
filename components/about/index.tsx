@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { TeamGrid, TeamGridItem } from "./team-grid";
