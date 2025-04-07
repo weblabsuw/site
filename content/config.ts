@@ -4,6 +4,7 @@ interface Config {
   socials: {
     discord?: string;
     instagram?: string;
+    email?: string;
   };
 }
 
@@ -13,5 +14,6 @@ export const config: Config = {
   socials: {
     discord: "https://go.weblabs.club/discord",
     instagram: "https://instagram.com/weblabsuw",
+    email: "weblabsuw@gmail.com",
   }
 };

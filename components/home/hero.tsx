@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { config } from "@/content/config";
-import { FaDiscord, FaInstagram } from "react-icons/fa6";
+import { FaDiscord, FaEnvelope, FaInstagram } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 import { MailingListForm } from "@/components/mailing-list-form";
 
@@ -38,6 +38,14 @@ export function Hero() {
             <Link href={config.socials.instagram} target="_blank" rel="noopener noreferrer">
               <Button className="px-4 py-2 flex items-center justify-center gap-1.5 text-primary bg-surface border-2 border-primary rounded-lg">
                 Follow us <FaInstagram size={20}/>
+              </Button>
+            </Link>
+          }
+
+          {config.socials.email &&
+            <Link href={`mailto:${config.socials.email}`} target="_blank" rel="noopener noreferrer">
+              <Button className="px-4 py-2 flex items-center justify-center gap-1.5 text-primary bg-surface border-2 border-primary rounded-lg">
+                {config.socials.email} <FaEnvelope size={20}/>
               </Button>
             </Link>
           }
