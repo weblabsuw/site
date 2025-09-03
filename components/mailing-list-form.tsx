@@ -1,5 +1,5 @@
 "use client";
- 
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -39,12 +39,12 @@ export function MailingListForm() {
     const mailingListIds = config.loopsListId ?? "";
     const userGroup = "Website signups";
     const formBody = `firstName=${encodeURIComponent(values.firstName)}&lastName=${encodeURIComponent(values.lastName)}&email=${encodeURIComponent(values.email)}&mailingLists=${encodeURIComponent(mailingListIds)}&userGroup=${encodeURIComponent(userGroup)}`;
-    
+
     if (!formEndpoint) {
       console.error("Loops form endpoint is not set.");
       return;
     }
-    
+
     const res = await fetch(formEndpoint, {
       method: "POST",
       body: formBody,
@@ -74,7 +74,11 @@ export function MailingListForm() {
               <FormItem className="w-full">
                 <FormLabel>First name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Bucky" className="bg-surface" {...field} />
+                  <Input
+                    placeholder="Bucky"
+                    className="bg-surface"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -88,7 +92,11 @@ export function MailingListForm() {
               <FormItem className="w-full">
                 <FormLabel>Last name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Badger" className="bg-surface" {...field} />
+                  <Input
+                    placeholder="Badger"
+                    className="bg-surface"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -103,12 +111,16 @@ export function MailingListForm() {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input placeholder="buckybadger@wisc.edu" className="bg-surface" {...field} />
+                <Input
+                  placeholder="buckybadger@wisc.edu"
+                  className="bg-surface"
+                  {...field}
+                />
               </FormControl>
               <FormDescription className="text-[0.65rem] leading-none opacity-30">
                 (You can unsubscribe at any time.)
               </FormDescription>
-              <FormMessage className="text-red-400 italic"/>
+              <FormMessage className="text-red-400 italic" />
             </FormItem>
           )}
         />

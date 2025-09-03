@@ -5,15 +5,17 @@ import { Hero } from "./hero";
 import { Events } from "./events";
 
 export function HomePage() {
-  return (<>
-    <Navbar active="home"/>
+  return (
+    <>
+      <Navbar active="home" />
 
-    <Hero/>
+      <Hero />
 
-    {/* <Slideshow/> */}
+      {/* <Slideshow/> */}
 
-    <Events/>
+      <Events />
 
-    <Footer/>
-  </>);
+      <Footer />
+    </>
+  );
 }

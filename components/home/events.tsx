@@ -6,20 +6,14 @@ export async function Events() {
   return (
     <section className="px-4 py-24 container max-w-5xl">
       <div className="px-8 md:px-12 py-8 text-onPrimary bg-primary rounded-3xl">
-        <h2 className="text-3xl font-extrabold">
-          What we do
-        </h2>
+        <h2 className="text-3xl font-extrabold">What we do</h2>
 
-        <p className="">
-          Learn how to build websites with us!
-        </p>
+        <p className="">Learn how to build websites with us!</p>
       </div>
 
       <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
         <div className="px-6 py-4 border-2 border-primary/10 rounded-xl">
-          <h3 className="font-bold underline underline-offset-2">
-            Workshops
-          </h3>
+          <h3 className="font-bold underline underline-offset-2">Workshops</h3>
           <p className="mt-1 text-xs">
             Hands-on project building sessions, happening every other week.
           </p>
@@ -35,9 +29,7 @@ export async function Events() {
         </div>
 
         <div className="px-6 py-4 border-2 border-primary/10 rounded-xl">
-          <h3 className="font-bold underline underline-offset-2">
-            Community
-          </h3>
+          <h3 className="font-bold underline underline-offset-2">Community</h3>
           <p className="mt-1 text-xs">
             We're designers, coders, engineers, founders, learners, and makers.
           </p>

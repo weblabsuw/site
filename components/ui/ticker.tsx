@@ -28,7 +28,7 @@ export function Ticker({
     const container = containerRef.current;
     if (!container) return;
 
-    container.scrollLeft = container.scrollWidth/3; // set initial scroll position
+    container.scrollLeft = container.scrollWidth / 3; // set initial scroll position
 
     // infinite scroll
     const handleScroll = () => {
@@ -36,10 +36,10 @@ export function Ticker({
       const scrollLeft = container.scrollLeft;
 
       if (scrollLeft === 0) {
-        container.scrollLeft = scrollWidth/3;
+        container.scrollLeft = scrollWidth / 3;
       }
-      if (scrollLeft >= 2*scrollWidth/3) {
-        container.scrollLeft = scrollWidth/3;
+      if (scrollLeft >= (2 * scrollWidth) / 3) {
+        container.scrollLeft = scrollWidth / 3;
       }
     };
 
@@ -54,7 +54,7 @@ export function Ticker({
     const animateScroll = (timestamp: number) => {
       if (!prevTimestamp) prevTimestamp = timestamp;
       const dt = timestamp - prevTimestamp;
-      container.scrollLeft += scrollSpeed * (dt/1000) + Math.round(dx);
+      container.scrollLeft += scrollSpeed * (dt / 1000) + Math.round(dx);
       dx *= frictionFactor;
 
       prevTimestamp = timestamp;
@@ -77,7 +77,7 @@ export function Ticker({
     const handleDragStop = () => {
       container.removeEventListener("mousemove", handleDrag);
       container.style.cursor = "auto";
-    }
+    };
 
     // event listeners + clean up
     container.addEventListener("scroll", handleScroll);

@@ -37,7 +37,8 @@ export default function RootLayout({
         {children}
         <Toaster
           toastOptions={{
-            className: "bg-surface text-primary font-sans font-bold border-primary/50"
+            className:
+              "bg-surface text-primary font-sans font-bold border-primary/50",
           }}
         />
       </body>

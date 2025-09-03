@@ -8,17 +8,21 @@ export function Hero() {
   return (
     <section className="container max-w-6xl px-4 py-16 flex flex-col lg:flex-row lg:items-end gap-24 lg:gap-16 leading-relaxed">
       <div className="flex-1">
-        <h1 className="text-4xl md:text-5xl font-extrabold">
-          WebLabs
-        </h1>
-        
+        <h1 className="text-4xl md:text-5xl font-extrabold">WebLabs</h1>
+
         <p className="mt-6">
-          We are a student org <span className="font-medium text-onPrimary bg-primary px-1 rounded-md">@ UW-Madison</span> dedicated to building websites together.
-          We build real projects together and learn from each other along the way.
+          We are a student org{" "}
+          <span className="font-medium text-onPrimary bg-primary px-1 rounded-md">
+            @ UW-Madison
+          </span>{" "}
+          dedicated to building websites together. We build real projects
+          together and learn from each other along the way.
         </p>
 
         <p className="mt-6">
-          Whether you&apos;re a self-described (or aspiring) designer, programmer, engineer, founder, or just someone who wants to learn more about the web, we welcome you to join us.
+          Whether you&apos;re a self-described (or aspiring) designer,
+          programmer, engineer, founder, or just someone who wants to learn more
+          about the web, we welcome you to join us.
         </p>
 
         <p className="mt-6 pl-4 border-l-[3px] border-onSurface/10 font-medium">
@@ -26,29 +30,41 @@ export function Hero() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 text-sm font-bold mt-8">
-          {config.socials.discord &&
-            <Link href={config.socials.discord} target="_blank" rel="noopener noreferrer">
+          {config.socials.discord && (
+            <Link
+              href={config.socials.discord}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button className="px-4 py-2 flex items-center justify-center gap-1.5 text-onPrimary bg-primary rounded-lg">
-                Join our community <FaDiscord size={20}/>
+                Join our community <FaDiscord size={20} />
               </Button>
             </Link>
-          }
+          )}
 
-          {config.socials.instagram &&
-            <Link href={config.socials.instagram} target="_blank" rel="noopener noreferrer">
+          {config.socials.instagram && (
+            <Link
+              href={config.socials.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button className="px-4 py-2 flex items-center justify-center gap-1.5 text-primary bg-surface border-2 border-primary rounded-lg">
-                Follow us <FaInstagram size={20}/>
+                Follow us <FaInstagram size={20} />
               </Button>
             </Link>
-          }
+          )}
 
-          {config.socials.email &&
-            <Link href={`mailto:${config.socials.email}`} target="_blank" rel="noopener noreferrer">
+          {config.socials.email && (
+            <Link
+              href={`mailto:${config.socials.email}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button className="px-4 py-2 flex items-center justify-center gap-1.5 text-primary bg-surface border-2 border-primary rounded-lg">
-                {config.socials.email} <FaEnvelope size={20}/>
+                {config.socials.email} <FaEnvelope size={20} />
               </Button>
             </Link>
-          }
+          )}
         </div>
       </div>
 
@@ -70,9 +86,9 @@ export function Hero() {
               </p>
             </div>
           </div>
-          
+
           <div className="px-8 py-6 bg-primary/5 rounded-3xl shadow-inner">
-            <MailingListForm/>
+            <MailingListForm />
           </div>
         </div>
       )}

@@ -6,7 +6,7 @@ import rehypeHighlight from "rehype-highlight";
 
 const nextConfig: NextConfig = {
   output: "export", // for static site generation
-  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   trailingSlash: true, // for GitHub Pages compatability
 };
 
@@ -17,4 +17,4 @@ const withMDX = createMDX({
   },
 });
 
-export default withMDX(nextConfig)
+export default withMDX(nextConfig);
