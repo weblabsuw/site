@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
+import { events } from "@/content/events";
 
 export async function Events() {
   return (
@@ -8,91 +9,61 @@ export async function Events() {
       <div className="px-8 md:px-12 py-8 text-onPrimary bg-primary rounded-3xl">
         <h2 className="text-3xl font-extrabold">What we do</h2>
 
-        <p className="">Learn how to build websites with us!</p>
+        <p className="">
+          We host competition-style events to connect with others, refresh
+          skills, and learn about web development tools!
+        </p>
       </div>
 
-      <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+      <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
         <div className="px-6 py-4 border-2 border-primary/10 rounded-xl">
-          <h3 className="font-bold underline underline-offset-2">Workshops</h3>
+          <h3 className="font-bold">WebFest</h3>
           <p className="mt-1 text-xs">
-            Hands-on project building sessions, happening every other week.
+            A series of ~2 hour long themed webdev events that foster a
+            collaborative and gamified experience around learning and mastering
+            web development topics.
           </p>
         </div>
 
-        <div className="px-6 py-4 border-2 border-primary/10 rounded-xl">
+        {/* <div className="px-6 py-4 border-2 border-primary/10 rounded-xl">
           <h3 className="font-bold underline underline-offset-2">
             Industry projects
           </h3>
           <p className="mt-1 text-xs">
             Work in teams for real-world clients or on creative ideas.
           </p>
-        </div>
+        </div> */}
 
         <div className="px-6 py-4 border-2 border-primary/10 rounded-xl">
-          <h3 className="font-bold underline underline-offset-2">Community</h3>
+          <h3 className="font-bold">Community</h3>
           <p className="mt-1 text-xs">
             We're designers, coders, engineers, founders, learners, and makers.
+            Join us to collaborate, share knowledge, and grow together.
           </p>
         </div>
       </div>
 
-      {/* <div className="mt-3 grid grid-cols-1 md:grid-cols-3 gap-6">
-        <h3 className="sr-only">Latest events</h3>
-
-        <div className="bg-primary/10 rounded-3xl overflow-hidden">
-          <img
-            className="hidden md:block w-full aspect-video object-cover object-center bg-primary/10"
-          />
-
-          <div className="px-6 md:pt-4 py-6">
-            <h3 className="text-base leading-tight font-bold">
-              Personal Website Workshop
-            </h3>
-            <div className="mt-1.5 flex gap-2 items-center text-xs font-medium">
-              <span className="px-1.5 text-primary border-2 border-primary">Planned</span>
+      <h3 className="font-bold text-3xl text-center mt-8 mb-2">Events</h3>
+      <div className="mt-3 grid grid-cols-1 md:grid-cols-3 gap-6">
+        {events.map((event) => (
+          <div
+            key={event.title}
+            className="bg-primary/10 rounded-3xl overflow-hidden"
+          >
+            <div className="px-6 md:pt-4 py-6">
+              <h3 className="text-base leading-tight font-bold">
+                {event.title}
+              </h3>
+              <div className="mt-1.5 flex gap-2 items-center text-xs font-medium">
+                <span className="px-1.5 text-primary border-2 border-primary">
+                  {event.status}
+                </span>
+              </div>
+              <p className="mt-3 text-xs">{event.description}</p>
             </div>
-            <p className="mt-3 text-xs">
-              Building a personal portfolio website to showcase your projects and skills.
-            </p>
           </div>
-        </div>
-
-        <div className="bg-primary/10 rounded-3xl overflow-hidden">
-          <img
-            className="hidden md:block w-full aspect-video object-cover object-center bg-primary/10"
-          />
-
-          <div className="px-6 md:pt-4 py-6">
-            <h3 className="text-base leading-tight font-bold">
-              TODO-list Galore Workshop
-            </h3>
-            <div className="mt-1.5 flex gap-2 items-center text-xs font-medium">
-              <span className="px-1.5 text-primary border-2 border-primary">Planned</span>
-            </div>
-            <p className="mt-3 text-xs">
-              Building todo-list apps from scratch with vanilla JavaScript, React, and Svelte.
-            </p>
-          </div>
-        </div>
-
-        <div className="bg-primary/10 rounded-3xl overflow-hidden">
-          <img
-            className="hidden md:block w-full aspect-video object-cover object-center bg-primary/10"
-          />
-
-          <div className="px-6 md:pt-4 py-6">
-            <h3 className="text-base leading-tight font-bold">
-              Prototyping in Figma
-            </h3>
-            <div className="mt-1.5 flex gap-2 items-center text-xs font-medium">
-              <span className="px-1.5 text-primary border-2 border-primary">Planned</span>
-            </div>
-            <p className="mt-3 text-xs">
-              Creating interactive prototypes for websites and apps using Figma.
-            </p>
-          </div>
-        </div>
-      </div> */}
+        ))}
+      </div>
 
       <div className="mt-8 flex justify-end">
         <Link href="/about">
