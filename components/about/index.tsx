@@ -36,18 +36,18 @@ export function AboutPage() {
       <TeamGrid className="mt-4">
         <TeamGridItem
           name="Grace Feng"
-          role="Co-President"
-          imageSrc={undefined}
+          role="President"
+          imageSrc="/images/team/grace.jpg"
           linkedin="https://www.linkedin.com/in/grace-feng-5a4b83271"
         />
-        <TeamGridItem
-          name="Linkai Wu"
-          role="Co-President"
-          imageSrc="/images/team/linkai.png"
-          linkedin="https://linkedin.com/in/linkaiwu"
-          email="mailto:linkai@linkaiwu.com"
-          website="https://linkaiwu.com"
-        />
+        {/* <TeamGridItem
+        name="Linkai Wu"
+        role="Co-President"
+        imageSrc="/images/team/linkai.png"
+        linkedin="https://linkedin.com/in/linkaiwu"
+        email="mailto:linkai@linkaiwu.com"
+        website="https://linkaiwu.com"
+      /> */}
         <TeamGridItem
           name="Valerie Lee"
           role="VP of Communications"
@@ -60,6 +60,14 @@ export function AboutPage() {
           role="VP of Logistics"
           imageSrc="/images/team/jackson.jpg"
           linkedin="https://www.linkedin.com/in/jackson-daniel"
+        />
+        <TeamGridItem
+          name="Sam Nesler"
+          role="Activities Director"
+          imageSrc="/images/team/sam.jpg"
+          linkedin="https://linkedin.com/in/sam-nesler"
+          email="mailto:sam@tsuni.dev"
+          website="https://tsuni.dev"
         />
       </TeamGrid>
 
