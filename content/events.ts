@@ -2,27 +2,59 @@ interface Event {
   title: string;
   status: "Planned";
   description: string;
+  date: string | Date;
 }
 
 export const events: Event[] = [
   {
+    title: "Kickoff",
+    status: "Planned",
+    description: "Introduction to the club",
+    date: new Date("2025-09-25"),
+  },
+  {
     title: "WebFest #1",
     status: "Planned",
-    description: 'October - "Bucky\'s First Semester" (HTML/CSS)',
+    description: '"Bucky\'s First Semester" (HTML/CSS)',
+    date: new Date("2025-10-15"),
+  },
+  {
+    title: "Speaker #1",
+    status: "Planned",
+    description: "Industry Speaker - TBA",
+    date: new Date("2025-10-21"),
+  },
+  {
+    title: "Speaker #2",
+    status: "Planned",
+    description: "Industry Speaker - TBA",
+    date: new Date("2025-11-05"),
   },
   {
     title: "WebFest #2",
     status: "Planned",
-    description: 'November - "Murder Mystery" (Databases and APIs)',
+    description: '"Murder Mystery" (Databases and APIs)',
+    date: new Date("2025-11-19"),
+  },
+  {
+    title: "Social",
+    status: "Planned",
+    description: "End of semester social event",
+    date: new Date("2025-12-05"),
   },
   {
     title: "WebFest #3",
     status: "Planned",
-    description: 'March - "Galactic Explorer" (WebGL Canvas)',
+    description: '"Galactic Explorer" (WebGL Canvas)',
+    date: "March - TBD",
   },
   {
     title: "WebFest #4",
     status: "Planned",
-    description: "April - Theme TBD",
+    description: "Theme TBD",
+    date: "April - TBD",
   },
 ];
+
+export const calendarLink =
+  "https://calendar.google.com/calendar/u/1?cid=MWNiMzVjNTFhZjE1NGI2ZTg4OWU1MWFmNzI3MGI3ZDk0MjRhYTJhNjQ5YzBhNWFmODUzYmVmNmFiYzJkNDdjZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t";

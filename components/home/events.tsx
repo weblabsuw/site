@@ -1,7 +1,8 @@
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
-import { events } from "@/content/events";
+import { events, calendarLink } from "@/content/events";
+import { FaCalendarPlus } from "react-icons/fa6";
 
 export async function Events() {
   return (
@@ -44,31 +45,53 @@ export async function Events() {
       </div>
 
       <h3 className="font-bold text-3xl text-center mt-8 mb-2">Events</h3>
-      <div className="mt-3 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="mt-3 grid grid-cols-1 md:grid-cols-3 gap-6 bg-onPrimary/20">
         {events.map((event) => (
           <div
             key={event.title}
-            className="bg-primary/10 rounded-3xl overflow-hidden"
+            className="group bg-primary/10 rounded-3xl overflow-hidden h-full flex flex-col px-6 md:py-4 py-6 hover:shadow-md hover:-rotate-1 hover:bg-primary/15 transition backdrop-blur-sm"
           >
-            <div className="px-6 md:pt-4 py-6">
-              <h3 className="text-base leading-tight font-bold">
-                {event.title}
-              </h3>
-              <div className="mt-1.5 flex gap-2 items-center text-xs font-medium">
-                <span className="px-1.5 text-primary border-2 border-primary">
-                  {event.status}
-                </span>
-              </div>
-              <p className="mt-3 text-xs">{event.description}</p>
+            <h3 className="text-base leading-tight font-bold">{event.title}</h3>
+            <div className="mt-1.5 flex gap-2 items-center text-xs font-medium">
+              <span className="px-1.5 text-primary border-2 border-primary">
+                {event.status}
+              </span>
             </div>
+            <p className="mt-3 text-xs">{event.description}</p>
+            <div className="flex-grow" />
+            <p className="mt-2 text-xs italic text-primary/80">
+              {typeof event.date === "string"
+                ? event.date
+                : event.date.toLocaleDateString("en-US", {
+                    timeZone: "UTC",
+                    weekday: "short",
+                    month: "short",
+                    day: "numeric",
+                  })}
+            </p>
           </div>
         ))}
       </div>
 
-      <div className="mt-8 flex justify-end">
-        <Link href="/about">
-          <Button className="px-4 py-2 font-bold text-onPrimary bg-primary rounded-lg">
-            Learn more →
+      <div className="mt-8 grid md:grid-cols-3 gap-8">
+        <div />
+        <a
+          href={calendarLink}
+          target="_blank"
+          rel="noreferrer"
+          className="md:mx-auto"
+        >
+          <Button className="group px-4 py-2 text-primary bg-surface border-2 border-primary rounded-lg">
+            <FaCalendarPlus className="inline mb-1 mr-2 group-hover:-rotate-6 transition" />
+            Add to Google Calendar
+          </Button>
+        </a>
+        <Link href="/about" className="md:ml-auto">
+          <Button className="group px-4 py-2 font-bold text-onPrimary bg-primary rounded-lg">
+            Learn more
+            <span className="ml-2 group-hover:translate-x-1 transition inline-block">
+              →
+            </span>
           </Button>
         </Link>
       </div>
