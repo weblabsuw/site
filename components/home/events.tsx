@@ -6,7 +6,7 @@ import { FaCalendarPlus } from "react-icons/fa6";
 
 export async function Events() {
   return (
-    <section className="px-4 py-24 container max-w-5xl">
+    <section className="px-4 py-24 container max-w-5xl md:bg-onPrimary/50 md:backdrop-blur-sm">
       <div className="px-8 md:px-12 py-8 text-onPrimary bg-primary rounded-3xl">
         <h2 className="text-3xl font-extrabold">What we do</h2>
 
@@ -49,7 +49,7 @@ export async function Events() {
         {events.map((event) => (
           <div
             key={event.title}
-            className="group bg-primary/10 rounded-3xl overflow-hidden h-full flex flex-col px-6 md:py-4 py-6 hover:shadow-md hover:-rotate-1 hover:bg-primary/15 transition backdrop-blur-sm"
+            className="group bg-primary/10 rounded-3xl overflow-hidden h-full flex flex-col px-6 md:py-4 py-6 hover:shadow-md hover:-rotate-1 hover:bg-primary/15 transition"
           >
             <h3 className="text-base leading-tight font-bold">{event.title}</h3>
             <div className="mt-1.5 flex gap-2 items-center text-xs font-medium">
@@ -73,20 +73,18 @@ export async function Events() {
         ))}
       </div>
 
-      <div className="mt-8 grid md:grid-cols-3 gap-8">
-        <div />
+      <div className="mt-8 flex justify-between gap-8">
         <a
           href={calendarLink}
           target="_blank"
           rel="noreferrer"
-          className="md:mx-auto"
         >
           <Button className="group px-4 py-2 text-primary bg-surface border-2 border-primary rounded-lg">
             <FaCalendarPlus className="inline mb-1 mr-2 group-hover:-rotate-6 transition" />
-            Add to Google Calendar
+            Follow on Google Calendar
           </Button>
         </a>
-        <Link href="/about" className="md:ml-auto">
+        <Link href="/about">
           <Button className="group px-4 py-2 font-bold text-onPrimary bg-primary rounded-lg">
             Learn more
             <span className="ml-2 group-hover:translate-x-1 transition inline-block">

@@ -21,20 +21,20 @@ export const events: Event[] = [
   {
     title: "Speaker #1",
     status: "Planned",
-    description: "Industry Speaker - TBA",
-    date: new Date("2025-10-21"),
-  },
-  {
-    title: "Speaker #2",
-    status: "Planned",
-    description: "Industry Speaker - TBA",
-    date: new Date("2025-11-05"),
+    description: "Industry Speaker",
+    date: "October - TBA",
   },
   {
     title: "WebFest #2",
     status: "Planned",
     description: '"Murder Mystery" (Databases and APIs)',
     date: new Date("2025-11-19"),
+  },
+  {
+    title: "Speaker #2",
+    status: "Planned",
+    description: "Industry Speaker",
+    date: "November - TBA",
   },
   {
     title: "Social",
@@ -51,7 +51,7 @@ export const events: Event[] = [
   {
     title: "WebFest #4",
     status: "Planned",
-    description: "Theme TBD",
+    description: "",
     date: "April - TBD",
   },
 ];
