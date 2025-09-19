@@ -28,7 +28,7 @@ export const events: Event[] = [
     title: "WebFest #2",
     status: "Planned",
     description: '"Murder Mystery" (Databases and APIs)',
-    date: new Date("2025-11-19"),
+    date: new Date("2025-11-13"),
   },
   {
     title: "Speaker #2",
