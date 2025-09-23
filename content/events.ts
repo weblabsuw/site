@@ -5,18 +5,19 @@ interface Event {
   date: string | Date;
 }
 
+// date format: "2023-09-15T18:00:00Z" for specific time. it is all in UTC!!
 export const events: Event[] = [
   {
     title: "Kickoff",
     status: "Planned",
     description: "Introduction to the club",
-    date: new Date("2025-09-25"),
+    date: new Date("2025-09-24T18:00:00Z"),
   },
   {
     title: "WebFest #1",
     status: "Planned",
     description: '"Bucky\'s First Semester" (HTML/CSS)',
-    date: new Date("2025-10-15"),
+    date: new Date("2025-10-15T18:00:00Z"),
   },
   {
     title: "Speaker #1",

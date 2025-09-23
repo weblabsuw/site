@@ -4,6 +4,19 @@ import { Button } from "@/components/ui/button";
 import { events, calendarLink } from "@/content/events";
 import { FaCalendarPlus } from "react-icons/fa6";
 
+const dateConfig = {
+  timeZone: "UTC",
+  weekday: "short",
+  month: "short",
+  day: "numeric",
+};
+
+const timeConfig = {
+  timeZone: "UTC",
+  hour: "numeric",
+  minute: "2-digit",
+};
+
 export async function Events() {
   return (
     <section className="px-4 py-24 container max-w-5xl md:bg-onPrimary/50 md:backdrop-blur-sm">
@@ -63,22 +76,20 @@ export async function Events() {
               {typeof event.date === "string"
                 ? event.date
                 : event.date.toLocaleDateString("en-US", {
-                    timeZone: "UTC",
-                    weekday: "short",
-                    month: "short",
-                    day: "numeric",
-                  })}
+                    ...dateConfig,
+                    // don't display time if it's midnight UTC (default)
+                    ...(event.date instanceof Date &&
+                    event.date.getUTCHours() !== 0
+                      ? timeConfig
+                      : {}),
+                  } as Intl.DateTimeFormatOptions)}
             </p>
           </div>
         ))}
       </div>
 
       <div className="mt-8 flex justify-between gap-8">
-        <a
-          href={calendarLink}
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href={calendarLink} target="_blank" rel="noreferrer">
           <Button className="group px-4 py-2 text-primary bg-surface border-2 border-primary rounded-lg">
             <FaCalendarPlus className="inline mb-1 mr-2 group-hover:-rotate-6 transition" />
             Follow on Google Calendar
