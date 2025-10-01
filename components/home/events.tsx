@@ -1,23 +1,24 @@
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
-import { events, calendarLink } from "@/content/events";
+import { calendarLink, fetchEvents } from "@/content/events";
 import { FaCalendarPlus } from "react-icons/fa6";
-
-const dateConfig = {
-  timeZone: "UTC",
-  weekday: "short",
-  month: "short",
-  day: "numeric",
-};
-
-const timeConfig = {
-  timeZone: "UTC",
-  hour: "numeric",
-  minute: "2-digit",
-};
+import { EventCard } from "./EventCard";
 
 export async function Events() {
+  const events = await fetchEvents();
+  const pastEvents = [];
+  const plannedEvents = [];
+  const pastCutoff = new Date().getTime() - 1000 * 60 * 60 * 24 * 7 * 4; // 4 weeks ago
+
+  for (const event of events) {
+    if (event.date instanceof Date && event.date.getTime() < pastCutoff) {
+      pastEvents.push(event);
+    } else {
+      plannedEvents.push(event);
+    }
+  }
+
   return (
     <section className="px-4 py-24 container max-w-5xl md:bg-onPrimary/50 md:backdrop-blur-sm">
       <div className="px-8 md:px-12 py-8 text-onPrimary bg-primary rounded-3xl">
@@ -58,35 +59,27 @@ export async function Events() {
       </div>
 
       <h3 className="font-bold text-3xl text-center mt-8 mb-2">Events</h3>
-      <div className="mt-3 grid grid-cols-1 md:grid-cols-3 gap-6 bg-onPrimary/20">
-        {events.map((event) => (
-          <div
-            key={event.title}
-            className="group bg-primary/10 rounded-3xl overflow-hidden h-full flex flex-col px-6 md:py-4 py-6 hover:shadow-md hover:-rotate-1 hover:bg-primary/15 transition"
-          >
-            <h3 className="text-base leading-tight font-bold">{event.title}</h3>
-            <div className="mt-1.5 flex gap-2 items-center text-xs font-medium">
-              <span className="px-1.5 text-primary border-2 border-primary">
-                {event.status}
-              </span>
-            </div>
-            <p className="mt-3 text-xs">{event.description}</p>
-            <div className="flex-grow" />
-            <p className="mt-2 text-xs italic text-primary/80">
-              {typeof event.date === "string"
-                ? event.date
-                : event.date.toLocaleDateString("en-US", {
-                    ...dateConfig,
-                    // don't display time if it's midnight UTC (default)
-                    ...(event.date instanceof Date &&
-                    event.date.getUTCHours() !== 0
-                      ? timeConfig
-                      : {}),
-                  } as Intl.DateTimeFormatOptions)}
-            </p>
+
+      {plannedEvents.length > 0 && (
+        <div className="mt-3 grid grid-cols-1 md:grid-cols-3 gap-6 bg-onPrimary/20">
+          {plannedEvents.map((event) => (
+            <EventCard key={event.title} event={event} />
+          ))}
+        </div>
+      )}
+
+      {pastEvents.length > 0 && (
+        <details className="mt-6">
+          <summary className="cursor-pointer font-bold text-lg text-center py-2 hover:text-primary transition">
+            Past Events ({pastEvents.length})
+          </summary>
+          <div className="mt-3 grid grid-cols-1 md:grid-cols-3 gap-6 bg-onPrimary/20">
+            {pastEvents.map((event) => (
+              <EventCard key={event.title} event={event} />
+            ))}
           </div>
-        ))}
-      </div>
+        </details>
+      )}
 
       <div className="mt-8 flex justify-between gap-8">
         <a href={calendarLink} target="_blank" rel="noreferrer">

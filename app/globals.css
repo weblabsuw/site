@@ -6,3 +6,44 @@
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #a78875;
 }
+
+details {
+  margin-top: 1rem;
+  box-sizing: border-box;
+}
+
+summary {
+  cursor: pointer;
+}
+
+summary::marker {
+  content: "";
+}
+
+summary::before {
+  content: "▶";
+  display: inline-block;
+  margin-right: 0.5rem;
+  transition: rotate 200ms ease-out;
+}
+
+details[open] summary::before {
+  rotate: 90deg;
+}
+
+details::details-content {
+  display: block;
+  padding: 10px;
+  transition: height 200ms ease-out, opacity 200ms ease-out;
+  overflow: hidden;
+}
+
+details[open]::details-content {
+  height: auto;
+  opacity: 1;
+}
+
+details::details-content {
+  height: 0;
+  opacity: 0;
+}
