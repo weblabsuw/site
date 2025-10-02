@@ -13,20 +13,20 @@ export interface Event {
 }
 
 export const dateConfig = {
-  timeZone: "UTC",
+  timeZone: "America/Chicago",
   weekday: "short",
   month: "short",
   day: "numeric",
 };
 
 export const timeConfig = {
-  timeZone: "UTC",
+  timeZone: "America/Chicago",
   hour: "numeric",
   minute: "2-digit",
 };
 
 export async function fetchEvents(): Promise<Event[]> {
-  const response = await fetch(csvURL);
+  const response = await fetch(csvURL, { cache: "no-cache"});
   const csvText = await response.text();
 
   const lines = csvText.trim().split("\n");

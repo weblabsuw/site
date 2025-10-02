@@ -25,9 +25,9 @@ export function EventCard({ event }: { event: Event; }) {
           ? event.date
           : event.date.toLocaleDateString("en-US", {
             ...dateConfig,
-            // don't display time if it's midnight UTC (default)
+            // don't display time if it's midnight (default)
             ...(event.date instanceof Date &&
-              event.date.getUTCHours() !== 0
+              event.date.getHours() !== 0
               ? timeConfig
               : {}),
           } as Intl.DateTimeFormatOptions)}

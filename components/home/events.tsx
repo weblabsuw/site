@@ -1,12 +1,20 @@
+"use client";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
-import { calendarLink, fetchEvents } from "@/content/events";
+import { calendarLink, fetchEvents, Event } from "@/content/events";
 import { FaCalendarPlus } from "react-icons/fa6";
 import { EventCard } from "./EventCard";
+import { useEffect, useState } from "react";
+import { EventShimmer } from "./EventShimmer";
 
-export async function Events() {
-  const events = await fetchEvents();
+export function Events() {
+  const [events, setEvents] = useState([] as Event[]);
+
+  useEffect(() => {
+    fetchEvents().then((data) => setEvents(data));
+  }, []);
+
   const pastEvents = [];
   const plannedEvents = [];
   const pastCutoff = new Date().getTime() - 1000 * 60 * 60 * 24 * 7 * 4; // 4 weeks ago
@@ -42,7 +50,7 @@ export async function Events() {
 
         {/* <div className="px-6 py-4 border-2 border-primary/10 rounded-xl">
           <h3 className="font-bold underline underline-offset-2">
-            Industry projects
+          Industry projects
           </h3>
           <p className="mt-1 text-xs">
             Work in teams for real-world clients or on creative ideas.
@@ -60,25 +68,35 @@ export async function Events() {
 
       <h3 className="font-bold text-3xl text-center mt-8 mb-2">Events</h3>
 
-      {plannedEvents.length > 0 && (
+      {events.length === 0 ? (
         <div className="mt-3 grid grid-cols-1 md:grid-cols-3 gap-6 bg-onPrimary/20">
-          {plannedEvents.map((event) => (
-            <EventCard key={event.title} event={event} />
+          {[...Array(6)].map((_, i) => (
+            <EventShimmer key={i} />
           ))}
         </div>
-      )}
+      ) : (
+        <>
+          {plannedEvents.length > 0 && (
+            <div className="mt-3 grid grid-cols-1 md:grid-cols-3 gap-6 bg-onPrimary/20">
+              {plannedEvents.map((event) => (
+                <EventCard key={event.title} event={event} />
+              ))}
+            </div>
+          )}
 
-      {pastEvents.length > 0 && (
-        <details className="mt-6">
-          <summary className="cursor-pointer font-bold text-lg text-center py-2 hover:text-primary transition">
-            Past Events ({pastEvents.length})
-          </summary>
-          <div className="mt-3 grid grid-cols-1 md:grid-cols-3 gap-6 bg-onPrimary/20">
-            {pastEvents.map((event) => (
-              <EventCard key={event.title} event={event} />
-            ))}
-          </div>
-        </details>
+          {pastEvents.length > 0 && (
+            <details className="mt-6">
+              <summary className="cursor-pointer font-bold text-lg text-center py-2 hover:text-primary transition">
+                Past Events ({pastEvents.length})
+              </summary>
+              <div className="mt-3 grid grid-cols-1 md:grid-cols-3 gap-6 bg-onPrimary/20">
+                {pastEvents.map((event) => (
+                  <EventCard key={event.title} event={event} />
+                ))}
+              </div>
+            </details>
+          )}
+        </>
       )}
 
       <div className="mt-8 flex justify-between gap-8">
