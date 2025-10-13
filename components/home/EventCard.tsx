@@ -3,7 +3,7 @@ import { Event, dateConfig, timeConfig } from "@/content/events";
 export function EventCard({ event }: { event: Event; }) {
   const hasLink = Boolean(event.link);
 
-  const content = (
+  return (
     <div className={`group bg-primary/10 rounded-3xl overflow-hidden h-full flex flex-col px-6 md:py-4 py-6 transition ${hasLink ? "hover:shadow-md hover:-rotate-1 hover:bg-primary/15" : ""}`}>
       <h3 className="text-base leading-tight font-bold">{event.title}</h3>
       <div className="mt-1.5 flex gap-2 items-center text-xs font-medium">
@@ -16,9 +16,9 @@ export function EventCard({ event }: { event: Event; }) {
       <p className="mt-3 text-xs">{event.description}</p>
       <div className="flex-grow" />
       {hasLink && (
-        <p className="mt-2 text-xs text-primary underline font-medium">
+        <a className="mt-2 text-xs text-primary underline font-medium" href={event.link} target="_blank" rel="noreferrer">
           Slides link
-        </p>
+        </a>
       )}
       <p className="mt-2 text-xs italic text-primary/80">
         {typeof event.date === "string"
@@ -34,14 +34,4 @@ export function EventCard({ event }: { event: Event; }) {
       </p>
     </div>
   );
-
-  if (hasLink) {
-    return (
-      <a key={event.title} href={event.link} target="_blank" rel="noreferrer">
-        {content}
-      </a>
-    );
-  }
-
-  return <div key={event.title}>{content}</div>;
 }
