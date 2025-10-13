@@ -35,7 +35,7 @@ export function EventCard({ event }: { event: Event; }) {
     </div>
   );
 
-  if (event.status === "past" && event.link) {
+  if (hasLink) {
     return (
       <a key={event.title} href={event.link} target="_blank" rel="noreferrer">
         {content}
