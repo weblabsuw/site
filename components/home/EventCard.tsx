@@ -1,7 +1,7 @@
 import { Event, dateConfig, timeConfig } from "@/content/events";
 
 export function EventCard({ event }: { event: Event; }) {
-  const hasLink = event.status === "past" && event.link;
+  const hasLink = Boolean(event.link);
 
   const content = (
     <div className={`group bg-primary/10 rounded-3xl overflow-hidden h-full flex flex-col px-6 md:py-4 py-6 transition ${hasLink ? "hover:shadow-md hover:-rotate-1 hover:bg-primary/15" : ""}`}>
